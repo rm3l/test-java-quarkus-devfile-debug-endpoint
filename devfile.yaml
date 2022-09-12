@@ -3,7 +3,10 @@ commands:
     commandLine: mvn -Dmaven.repo.local=/home/user/.m2/repository compile
     component: tools
     workingDir: ${PROJECT_SOURCE}
-  id: init-compile
+    group:
+      isDefault: true
+      kind: build
+  id: compile
 - exec:
     commandLine: mvn -Dmaven.repo.local=/home/user/.m2/repository quarkus:dev -Dquarkus.http.host=0.0.0.0
       -Djava.util.logging.manager=org.jboss.logmanager.LogManager
@@ -45,9 +48,9 @@ components:
 - name: m2
   volume:
     size: 3Gi
-events:
-  postStart:
-  - init-compile
+#events:
+#  postStart:
+#  - init-compile
 metadata:
   description: Quarkus with Java
   displayName: Quarkus Java
