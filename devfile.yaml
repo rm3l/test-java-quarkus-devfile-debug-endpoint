@@ -45,9 +45,9 @@ components:
 - name: m2
   volume:
     size: 3Gi
-events:
-  postStart:
-  - init-compile
+#events:
+#  postStart:
+#  - init-compile
 metadata:
   description: Quarkus with Java
   displayName: Quarkus Java
