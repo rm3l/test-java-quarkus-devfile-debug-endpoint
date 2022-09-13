@@ -41,6 +41,8 @@ components:
     image: registry.access.redhat.com/ubi8/openjdk-11
     memoryLimit: 512Mi
     mountSources: true
+    command: ['tail']
+    args: ['-f', '/dev/null']
     volumeMounts:
     - name: m2
       path: /home/user/.m2
